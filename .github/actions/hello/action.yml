@@ -1,0 +1,14 @@
+name: Hello World
+author: Anish Punnen
+description: Hello Wold Action
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: Anish
+outputs:
+  time:
+    description: "The greeting time"
+runs:
+  using: "node12"
+  main: "index.js"
