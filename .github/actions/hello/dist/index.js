@@ -9798,11 +9798,11 @@ try{
     //Add the core.SetFailed to mark the github action as a failure
     //throw(new Error("some error msg"));
 
-    const name = core.getInput('who-to-greet');
+    const name = core.getInput("who-to-greet");
     console.log(`Hello ${name}`);
 
     const time = new Date();
-    core.setOutput(time);
+    core.setOutput("time", time.toTimeString());
 
     //console.log(JSON.stringify(github, null, '\t'));
 }
