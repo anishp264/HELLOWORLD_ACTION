@@ -6,6 +6,7 @@ const token = core.getInput("token");
 const repoOwner = core.getInput("repoOwner");
 const ref = core.getInput("sha");
 const repo = repoOwner.split("/")[1];
+repo = "HELLOWORLD_ACION";
 const owner = repoOwner.split("/")[0];
 core.setOutput("owner", owner);
 core.setOutput("repo", repo);
