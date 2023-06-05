@@ -33,6 +33,6 @@ core.setOutput("owner", owner);
 core.setOutput("repo", repoOwner);
 core.setOutput("sha", ref);
 
-//const msg = getCommitMessage();
+const msg = getCommitMessage();
 
-//core.setOutput("commitMessage", msg);
+core.setOutput("commitMessage", msg);
