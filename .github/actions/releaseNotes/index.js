@@ -29,7 +29,7 @@ async function getCommitMessage() {
 }
 
 core.setOutput("owner", owner);
-core.setOutput("repo", repo);
+core.setOutput("repo", repoOwner);
 core.setOutput("sha", ref);
 
 //const msg = getCommitMessage();
