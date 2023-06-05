@@ -47,7 +47,7 @@ jobs:
       - uses: ./.github/actions/releaseNotes
         id: releaseNotes
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKE }}
           owner: ${GITHUB_REPOSITORY_OWNER}
           repo:  ${GITHUB_REPOSITORY}
           sha: ${GITHUB_SHA}
