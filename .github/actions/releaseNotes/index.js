@@ -11,11 +11,11 @@ async function getCommitMessage() {
     const octokit = new Octokit(token);
   
     try {
-      /*const commit = await octokit.repos.getCommit({
+      const commit = await octokit.repos.getCommit({
         owner,
         repo,
         ref: sha
-      });*/
+      });
   
       const commitMSG = "FUCK";
       //commit.data.commit.message;
