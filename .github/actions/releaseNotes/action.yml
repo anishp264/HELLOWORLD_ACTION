@@ -1,0 +1,13 @@
+name: Get Release Notes
+author: Anish Punnen
+description: Action to Fetch Release Notes
+outputs:
+  owner:
+    description: "The repo owner"
+  repo:
+    description: "The repo"
+  sha:
+    description: "The SHA"
+runs:
+  using: "node12"
+  main: "index.js"

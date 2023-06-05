@@ -31,5 +31,15 @@ jobs:
           commit_message=$(echo $response | jq -r '.commit.message')
 
           echo "Commit Message:=> $commit_message"
+  testing-release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/releaseNotes
+        id: releaseNotes
+      - run: |
+          echo "owner: ${{ steps.hello.outputs.owner }}"
+          echo "owner: ${{ steps.hello.outputs.repo }}"
+          echo "owner: ${{ steps.hello.outputs.sha }}"
 
         
