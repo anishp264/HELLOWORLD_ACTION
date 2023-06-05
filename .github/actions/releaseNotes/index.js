@@ -12,7 +12,7 @@ core.setOutput("repo", repo);
 core.setOutput("sha", sha);
 
 async function getCommitMessage() {
-    const octokit = new Octokit(token);
+    const octokit = new Octokit();
   
     try {
       const commit = await octokit.repos.getCommit({
