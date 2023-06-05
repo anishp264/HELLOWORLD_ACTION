@@ -7,10 +7,6 @@ const owner = core.getInput("owner");
 const repo = core.getInput("repo");
 const sha = core.getInput("sha");
 
-core.setOutput("owner", owner);
-core.setOutput("repo", repo);
-core.setOutput("sha", sha);
-
 async function getCommitMessage() {
     const octokit = new Octokit(token);
   
@@ -21,9 +17,9 @@ async function getCommitMessage() {
         ref: sha
       });*/
   
-      const commitMessage = "FUCK";
+      const commitMSG = "FUCK";
       //commit.data.commit.message;
-      return commitMessage;
+      return commitMSG;
     } catch (error) {
         core.setFailed(error.message);
       return null;
@@ -33,3 +29,6 @@ async function getCommitMessage() {
 const msg = getCommitMessage();
 
 core.setOutput("commitMessage", msg);
+core.setOutput("owner", owner);
+core.setOutput("repo", repo);
+core.setOutput("sha", sha);
