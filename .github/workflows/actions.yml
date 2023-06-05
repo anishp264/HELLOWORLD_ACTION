@@ -11,5 +11,27 @@ jobs:
       - run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
           echo $HELLO
+  commitNotes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get previous commit
+        id: get_prev_commit
+        run: echo "::set-output name=sha::$(git rev-parse HEAD^1)"
+
+      - name: Get commit notes
+        id: commit_notes
+        run: |
+          PREV_COMMIT=${{ steps.get_prev_commit.outputs.sha }}
+          NOTES=$(git log --pretty=format:"%s" $PREV_COMMIT..HEAD)
+          echo "::set-output name=notes::$NOTES"
+
+      - name: Print commit notes
+        run: |
+          echo "Commit Notes: ${{ steps.commit_notes.outputs.notes }}"
+
 
         
