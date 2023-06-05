@@ -50,7 +50,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repoOwner:  ${GITHUB_REPOSITORY}
           sha: ${GITHUB_SHA}
-      - run: |    
+      - run: |  
+          echo "owner: ${{ steps.releaseNotes.outputs.owner }}"  
           echo "repo: ${{ steps.releaseNotes01.outputs.repo }}"
           echo "sha: ${{ steps.releaseNotes01.outputs.sha }}"
 
