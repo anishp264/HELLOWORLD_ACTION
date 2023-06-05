@@ -13,6 +13,9 @@ try{
     core.error("error message");
 
     const name = core.getInput("who-to-greet");
+    const firstName = name.split("/")[0];
+    console.log(`Hello ****01 => ${name}`);
+    console.log(`Hello ****02 => ${firstName}`);
     //setting name as a secret, name wont be visible in the logs
     core.setSecret(name);
     console.log(`Hello ${name}`);
