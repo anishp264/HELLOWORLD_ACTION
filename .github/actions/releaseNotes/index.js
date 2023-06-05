@@ -5,7 +5,7 @@ const { Octokit } = require("@octokit/rest");
 const token = core.getInput("token");
 const owner = core.getInput("owner");
 const repo = core.getInput("repo");
-const sha = core.getInput("sha");
+const ref = core.getInput("sha");
 
 async function getCommitMessage() {
     const octokit = new Octokit(token);
@@ -14,7 +14,7 @@ async function getCommitMessage() {
       const commit = await octokit.repos.getCommit({
         owner,
         repo,
-        ref: sha
+        ref
       });
   
       const commitMSG = "FUCK";
@@ -31,4 +31,4 @@ const msg = getCommitMessage();
 core.setOutput("commitMessage", msg);
 core.setOutput("owner", owner);
 core.setOutput("repo", repo);
-core.setOutput("sha", sha);
+core.setOutput("sha", ref);
