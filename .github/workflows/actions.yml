@@ -30,6 +30,6 @@ jobs:
           # Extract the commit message from the API response
           commit_message=$(echo $response | jq -r '.commit.message')
 
-          echo "Commit Message: $commit_message"
+          echo "Commit Message:=> $commit_message"
 
         
