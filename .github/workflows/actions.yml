@@ -34,12 +34,11 @@ jobs:
   testing-release-notes:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./.github/actions/releaseNotes
-        id: releaseNotes
+      - name: Get CommitRelease Notes
+        uses: actions/checkout@v2
       - run: |
-          echo "owner: ${{ steps.hello.outputs.owner }}"
-          echo "repo: ${{ steps.hello.outputs.repo }}"
+          echo "owner: ${{ github.repository_owner }}"
+          echo "repo: ${{ github.repository_name }}"
           echo "sha: ${{ steps.hello.outputs.sha }}"
 
         
