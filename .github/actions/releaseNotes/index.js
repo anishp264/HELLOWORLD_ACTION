@@ -3,13 +3,12 @@ const github = require('@actions/github');
 const { Octokit } = require("@octokit/rest");
 
 const token = core.getInput("token");
-//const owner = core.getInput("owner");
 const repoOwner = core.getInput("repo");
 const ref = core.getInput("sha");
-//const repo  = "HELLOWORLD_ACTION";
 const[owner,repo] = repoOwner.split("/");
-//repoOwner.split("/")[1];
-
+core.setOutput("owner", owner);
+core.setOutput("repo", repo);
+core.setOutput("sha", ref);
 async function getCommitMessage() {
     const octokit = new Octokit({
         auth: token
@@ -30,9 +29,7 @@ async function getCommitMessage() {
     }
 }
 
-core.setOutput("owner", owner);
-core.setOutput("repo", repo);
-core.setOutput("sha", ref);
+
 
 /*const msg = getCommitMessage();
 
