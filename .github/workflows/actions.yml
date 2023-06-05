@@ -37,8 +37,8 @@ jobs:
       - name: Get CommitRelease Notes
         uses: actions/checkout@v2
       - run: |
-          echo "owner: ${{ github.repository_owner }}"
           echo "repo: ${{ github.repository_name }}"
+          echo "owner: ${{ github.repository_owner }}"          
           echo "sha: ${{ steps.hello.outputs.sha }}"
 
         
