@@ -4,10 +4,10 @@ const { Octokit } = require("@octokit/rest");
 
 const token = core.getInput("token");
 //const owner = core.getInput("owner");
-//const repoOwner = core.getInput("repo");
+const repoOwner = core.getInput("repo");
 const ref = core.getInput("sha");
 //const repo  = "HELLOWORLD_ACTION";
-const[owner,repo] = core.getInput("repo").split("/");
+const[owner,repo] = repoOwner.split("/");
 //repoOwner.split("/")[1];
 
 async function getCommitMessage() {
