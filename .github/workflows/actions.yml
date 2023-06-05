@@ -45,15 +45,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/releaseNotes
-        id: releaseNotes
+        id: releaseNotes01
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           owner: ${GITHUB_REPOSITORY_OWNER}
           repo:  ${GITHUB_REPOSITORY}
           sha: ${GITHUB_SHA}
       - run: |    
-          echo "repo: ${{ steps.releaseNotes.outputs.repo }}"
-          echo "sha: ${{ steps.releaseNotes.outputs.sha }}"
+          echo "repo: ${{ steps.releaseNotes01.outputs.repo }}"
+          echo "sha: ${{ steps.releaseNotes01.outputs.sha }}"
 
 
         
