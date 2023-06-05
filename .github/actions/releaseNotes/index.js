@@ -11,7 +11,7 @@ const repo  = "HELLOWORLD_ACTION";
 
 async function getCommitMessage() {
     const octokit = new Octokit({
-        auth: token
+        auth: process.env.ACCESS_TOKEN
       })
     
     try {
