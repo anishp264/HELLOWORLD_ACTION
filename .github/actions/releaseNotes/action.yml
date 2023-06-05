@@ -5,10 +5,7 @@ inputs:
   token:
     description: "Github Token"
     required: true
-  owner:
-    description: "Github Repo Owner"
-    required: true
-  repo:
+  repoOwner:
     description: "Github Repository"
   sha:
     description: "Commit SHA"

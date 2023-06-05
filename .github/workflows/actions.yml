@@ -48,8 +48,7 @@ jobs:
         id: releaseNotes01
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          owner: ${GITHUB_REPOSITORY_OWNER}
-          repo:  ${GITHUB_REPOSITORY}
+          repoOwner:  ${GITHUB_REPOSITORY}
           sha: ${GITHUB_SHA}
       - run: |    
           echo "repo: ${{ steps.releaseNotes01.outputs.repo }}"

@@ -3,7 +3,7 @@ const github = require('@actions/github');
 const { Octokit } = require("@octokit/rest");
 
 const token = core.getInput("token");
-const repoOwner = core.getInput("repo");
+const repoOwner = core.getInput("repoOwner");
 const ref = core.getInput("sha");
 const[owner,repo] = repoOwner.split("/");
 core.setOutput("owner", owner);
