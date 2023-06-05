@@ -17,7 +17,7 @@ try{
     const firstName = name.split("/")[0];    
     console.log(`Hello ****02 => ${firstName}`);
     //setting name as a secret, name wont be visible in the logs
-    core.setSecret(name);
+    //core.setSecret(name);
     console.log(`Hello ${name}`);
 
     const time = new Date();
