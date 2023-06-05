@@ -40,5 +40,21 @@ jobs:
           echo "repo: ${GITHUB_REPOSITORY}"
           echo "owner: ${GITHUB_REPOSITORY_OWNER}"          
           echo "sha: ${GITHUB_SHA}"
+  testing-release-notes-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/releaseNotes
+        id: releaseNotes
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner: ${GITHUB_REPOSITORY_OWNER}
+          repo:  ${GITHUB_REPOSITORY}
+          sha: ${GITHUB_SHA}
+      - run: |
+          echo "repo: ${{ steps.releaseNotes.outputs.repo }}"
+          echo "owner: ${{ steps.releaseNotes.outputs.owner }}"          
+          echo "sha: ${{ steps.releaseNotes.outputs.sha }}"
+
 
         

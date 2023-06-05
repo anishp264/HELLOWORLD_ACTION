@@ -1,13 +1,24 @@
 name: Get Release Notes
 author: Anish Punnen
 description: Action to Fetch Release Notes
+inputs:
+  token:
+    description: "Github Token"
+    required: true
+  owner:
+    description: "Github Repo Owner"
+    required: true
+  repo:
+    description: "Github Repository"
+  sha:
+    description: "Commit SHA"
 outputs:
   owner:
     description: "The repo owner"
   repo:
     description: "The repo"
   sha:
-    description: "The SHA"
+    description: "SHA"
 runs:
   using: "node12"
   main: "index.js"

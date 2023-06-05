@@ -4,11 +4,13 @@ const { Octokit } = require("@octokit/rest");
 
 try{
 
-    const { owner, repo, sha } = process.env.GITHUB_CONTEXT;
+    const owner = core.getInput(owner);
+    const repo = core.getInput(owner);
+    const sha = core.getInput(sha);
 
-    core.setOutput("owner", owner.toString());
-    core.setOutput("repo", repo.toString());
-    core.setOutput("sha", sha.toString());
+    core.setOutput("owner", owner);
+    core.setOutput("repo", repo);
+    core.setOutput("sha", sha);
 }
 catch(error){
     core.setFailed(error.message);
