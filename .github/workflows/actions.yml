@@ -52,7 +52,9 @@ jobs:
           repo:  ${GITHUB_REPOSITORY}
           sha: ${GITHUB_SHA}
       - run: |     
-          echo "commitMessage: ${{ steps.releaseNotes.outputs.commitMessage }}"
+          echo "commitMessage: ${{ steps.releaseNotes.outputs.owner }}"
+          echo "commitMessage: ${{ steps.releaseNotes.outputs.repo }}"
+          echo "commitMessage: ${{ steps.releaseNotes.outputs.sha }}"
 
 
         
