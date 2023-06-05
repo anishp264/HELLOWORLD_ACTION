@@ -6,9 +6,9 @@ try{
 
     const { owner, repo, sha } = process.env.GITHUB_CONTEXT;
 
-    core.setOutput("owner", owner);
-    core.setOutput("repo", repo);
-    core.setOutput("sha", sha);
+    core.setOutput("owner", owner.toString());
+    core.setOutput("repo", repo.toString());
+    core.setOutput("sha", sha.toString());
 }
 catch(error){
     core.setFailed(error.message);
