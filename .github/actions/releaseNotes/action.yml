@@ -19,6 +19,8 @@ outputs:
     description: "The repo"
   sha:
     description: "SHA"
+  commitMessage:
+    description: "The Commit Message"
 runs:
   using: "node12"
   main: "index.js"
