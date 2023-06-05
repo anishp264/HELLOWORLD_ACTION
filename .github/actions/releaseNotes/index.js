@@ -8,14 +8,24 @@ const repo = core.getInput("repo");
 const ref = core.getInput("sha");
 
 async function getCommitMessage() {
-    const octokit = new Octokit(token);
+    const octokit = new Octokit({
+        auth: token
+      })
   
     try {
-      const commit = await octokit.repos.getCommit({
+      const commit = await octokit.request('GET /repos/{owner}/{repo}/commits/{ref}', {
+        owner: owner,
+        repo: repo,
+        ref: ref,
+        headers: {
+          'X-GitHub-Api-Version': '2022-11-28'
+        }
+      });
+      /*await octokit.repos.getCommit({
         owner,
         repo,
         ref
-      });
+      });*/
   
       const commitMSG = "FUCK";
       //commit.data.commit.message;
