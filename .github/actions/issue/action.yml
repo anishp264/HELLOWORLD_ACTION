@@ -1,0 +1,22 @@
+name: Open Github Issue
+author: Anish Punnen
+description: Open a Github Issue
+inputs:
+  token:
+    description: "Github Token"
+    required: true
+  title:
+    description: "Issue title"
+    required: true
+  body:
+    description: "Issue body"
+  assignees:
+    description: "Issue Assignees"
+outputs:
+  issue: 
+    description: "The issue as a Json object"
+runs:
+  using: "node12"
+  main: "dist/index.js"
+
+  
