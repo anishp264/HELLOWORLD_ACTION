@@ -18,20 +18,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Get previous commit
-        id: get_prev_commit
-        run: echo "::set-output name=sha::$(git rev-parse HEAD^1)"
-
-      - name: Get commit notes
-        id: commit_notes
+      - name: Get Commit Notes
         run: |
-          PREV_COMMIT=${{ steps.get_prev_commit.outputs.sha }}
-          NOTES=$(git log --pretty=format:"%s" $PREV_COMMIT..HEAD)
-          echo "::set-output name=notes::$NOTES"
+          # Retrieve the latest commit SHA
+          commit_sha=$(git rev-parse HEAD)
 
-      - name: Print commit notes
-        run: |
-          echo "Commit Notes: ${{ steps.commit_notes.outputs.notes }}"
+          # Fetch the commit details using the GitHub API
+          response=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+                      https://api.github.com/repos/${{ github.repository }}/commits/${commit_sha})
 
+          # Extract the commit message from the API response
+          commit_message=$(echo $response | jq -r '.commit.message')
+
+          echo "Commit Message: $commit_message"
 
         
