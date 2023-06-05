@@ -54,7 +54,7 @@ jobs:
       - run: |
           echo "repo: ${{ steps.releaseNotes.outputs.repo }}"
           echo "owner: ${{ steps.releaseNotes.outputs.owner }}"          
-          echo "sha: ${{ steps.releaseNotes.outputs.sha }}"
+          echo "commitMessage: ${{ steps.releaseNotes.outputs.commitMessage }}"
 
 
         
