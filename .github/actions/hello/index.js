@@ -18,7 +18,7 @@ try{
     console.log(`Hello ${firstName}`);
     //setting name as a secret, name wont be visible in the logs
     //core.setSecret(name);
-    console.log(`Hello ${name}`);
+    console.log(`Hello1 ${name}`);
 
     const time = new Date();
     core.setOutput("time", time.toTimeString());
