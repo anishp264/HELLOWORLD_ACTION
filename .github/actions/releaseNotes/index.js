@@ -29,4 +29,6 @@ async function getCommitMessage() {
     }
 }
 
-core.setOutput("commitMessage", getCommitMessage());
+const msg = getCommitMessage();
+
+core.setOutput("commitMessage", msg);
