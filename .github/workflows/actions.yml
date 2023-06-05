@@ -46,8 +46,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/releaseNotes
         id: releaseNotes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
-          token: ${{ secrets.GITHUB_TOKE }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           owner: ${GITHUB_REPOSITORY_OWNER}
           repo:  ${GITHUB_REPOSITORY}
           sha: ${GITHUB_SHA}
