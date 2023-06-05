@@ -34,4 +34,4 @@ core.setOutput("sha", ref);
 
 //const msg = getCommitMessage();
 
-core.setOutput("commitMessage", msg);
+//core.setOutput("commitMessage", msg);
