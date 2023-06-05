@@ -12,16 +12,17 @@ core.setOutput("repo", repo);
 core.setOutput("sha", sha);
 
 async function getCommitMessage() {
-    const octokit = new Octokit();
+    const octokit = new Octokit(token);
   
     try {
-      const commit = await octokit.repos.getCommit({
+      /*const commit = await octokit.repos.getCommit({
         owner,
         repo,
         ref: sha
-      });
+      });*/
   
-      const commitMessage = commit.data.commit.message;
+      const commitMessage = "FUCK";
+      //commit.data.commit.message;
       return commitMessage;
     } catch (error) {
         core.setFailed(error.message);
