@@ -51,7 +51,7 @@ jobs:
           repoOwner:  ${GITHUB_REPOSITORY}
           sha: ${GITHUB_SHA}
       - run: |  
-          echo "owner: ${{ steps.releaseNotes.outputs.owner }}"  
+          echo "owner: ${{ steps.releaseNotes01.outputs.owner }}"  
           echo "repo: ${{ steps.releaseNotes01.outputs.repo }}"
           echo "sha: ${{ steps.releaseNotes01.outputs.sha }}"
 
