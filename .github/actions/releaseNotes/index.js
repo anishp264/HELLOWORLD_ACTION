@@ -4,13 +4,14 @@ const { Octokit } = require("@octokit/rest");
 
 try{
 
-    const owner = core.getInput(owner);
-    const repo = core.getInput(owner);
-    const sha = core.getInput(sha);
+    const owner = core.getInput("owner");
+    const repo = core.getInput("repo");
+    const sha = core.getInput("sha");
 
     core.setOutput("owner", owner);
     core.setOutput("repo", repo);
     core.setOutput("sha", sha);
+
 }
 catch(error){
     core.setFailed(error.message);
