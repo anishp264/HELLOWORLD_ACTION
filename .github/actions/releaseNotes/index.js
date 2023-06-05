@@ -3,10 +3,11 @@ const github = require('@actions/github');
 const { Octokit } = require("@octokit/rest");
 
 const token = core.getInput("token");
-const repoOwner = core.getInput("repoOwner");
+const repoOwner = core.getInput("repoOwner").toString();
 const ref = core.getInput("sha");
-const repo = repoOwner.split("/")[1];
-repo = "HELLOWORLD_ACION";
+const repo = "HELLOWORLD_ACION";
+//repoOwner.split("/")[1];
+//repo = "HELLOWORLD_ACION";
 const owner = repoOwner.split("/")[0];
 core.setOutput("owner", owner);
 core.setOutput("repo", repo);
