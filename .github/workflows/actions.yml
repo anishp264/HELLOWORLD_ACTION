@@ -39,7 +39,7 @@ jobs:
         id: releaseNotes
       - run: |
           echo "owner: ${{ steps.hello.outputs.owner }}"
-          echo "owner: ${{ steps.hello.outputs.repo }}"
-          echo "owner: ${{ steps.hello.outputs.sha }}"
+          echo "repo: ${{ steps.hello.outputs.repo }}"
+          echo "sha: ${{ steps.hello.outputs.sha }}"
 
         
